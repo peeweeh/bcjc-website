@@ -129,7 +129,7 @@ else
    {
    
 
-        $target_dir = "/tmp/";
+        $target_dir = dirname(__FILE__);
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
      
         if( $_FILES["fileToUpload"]["tmp_name"])
@@ -149,11 +149,9 @@ else
         $email_body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nPhone: $phone\n\nMessage:\n$message";
         $headers = "From: noreply@yourdomain.com\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
         $headers .= "Reply-To: $email_address"; 
-        mail($to,$email_subject,$email_body,$headers);
+      //  mail($to,$email_subject,$email_body,$headers);
          
-        echo "<div class='alert alert-success'>
-  <strong>OK!</strong> Submission Complete
-</div>";
+        echo "<div class='alert alert-success'><strong>OK!</strong> Submission Complete</div>";
    }
 ?>
                 <div class="col-lg-12 text-center">
